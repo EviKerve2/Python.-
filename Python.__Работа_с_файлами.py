@@ -6,7 +6,7 @@ def loe_failist(file:str)->str:
     #stroka=f.readlines() #list
     f.close()
     return stroka
-stroka=loe_failist("Fail.py.txt")
+stroka=loe_failist("File.py.txt")
 print(stroka)
 def loe_faililst_listisse(file:str)->list:
     """Loeme tekst failist ja salvesta järjedisse
@@ -17,5 +17,14 @@ def loe_faililst_listisse(file:str)->list:
         list_append(stroka.strip())
     f.close 
     return list_
-spisok=loe_faililst_listisse("Fail.py.txt")
+spisok=loe_faililst_listisse("File.py.txt")
 print(spisok)
+
+def salvesta_failisse(file:str):
+    f=open(file,"a")
+    text=input("Sisesta tekst: ")
+    f.write(text+"\n")
+    f.close()
+
+for i in range(10):
+    salvesta_failisse("Loetelu.txt")
